@@ -1,8 +1,9 @@
 <template>
   <main>
-    <div class="filmesPopulares">
+    <section class="filmesPopulares">
+      <h1>Popular</h1>
       <ul v-for="filmePopular in filmesPopulares" :key="filmePopular.id">
-        <li>
+        <li type="none">
           {{ filmePopular.adult }}
           {{ filmePopular.popularity }}
           {{ filmePopular.title }}
@@ -11,16 +12,15 @@
           {{ filmePopular.overview }}
         </li>
         <img
-          :src="filmePopular.poster_path"
-          height="40"
-          width="40"
-          alt="error"
+          :src="`https://image.tmdb.org/t/p/original/${filmePopular.poster_path}`"
+          width="300"
+          height="300"
         />
-      <router-link :to="{ name: 'About', params: { id: filmePopular.id } }"
-        >ℹ️</router-link
-      >
+        <router-link :to="{ name: 'About', params: { id: filmePopular.id } }"
+          >ℹ️</router-link
+        >
       </ul>
-    </div>
+    </section>
   </main>
 </template>
 
@@ -34,9 +34,10 @@ export default {
     };
   },
   async mounted() {
+    const api_key = "e3c3595204a142ec627688c9ea2ad00f";
     await axios
       .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=e3c3595204a142ec627688c9ea2ad00f&language=en-US&page=1"
+        `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`
       )
       .then((response) => {
         response.data;
