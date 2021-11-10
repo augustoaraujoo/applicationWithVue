@@ -14,7 +14,7 @@
       <li class="liCardMovie" type="none">
         <h1 class="titleMovie">{{ filmePopular.title }}</h1>
         <!-- {{ filmePopular.adult }} -->
-        {{ filmePopular.popularity }}
+        <i class="popularityMovie">{{ filmePopular.popularity }}</i>
         <!-- {{ filmePopular.original_title }} -->
         <!-- {{ filmePopular.overview }} -->
       </li>
@@ -28,8 +28,10 @@
 </template>
 <style scoped>
 #linkToViewCard {
-  background: red;
   display: inline;
+}
+.popularityMovie{
+  color: #f5f5f5ea;
 }
 .filmesPopulares {
   grid-area: "filmesPopulares";
@@ -68,7 +70,7 @@
   text-align: center;
   font-weight: 700;
   margin: 2px;
-  color: rgba(255, 255, 255, 0.644);
+  color: rgb(255, 255, 255);
 }
 #imageFilme {
   width: 200px;

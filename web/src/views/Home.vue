@@ -1,18 +1,18 @@
 <template>
-  <main >
-    <aside class="asideBar">
-      <h1>Popular</h1>
-    </aside>
+  <main>
+    <Aside />
     <CardMovie />
   </main>
 </template>
 
 <script>
+import Aside from "../components/aside/Aside.vue";
 import CardMovie from "../components/card-movie/CardMovie.vue";
 export default {
   name: "Home",
   components: {
     CardMovie,
+    Aside,
   },
 };
 </script>
@@ -25,11 +25,5 @@ main {
   grid-template-rows: 1fr;
   gap: 1px;
   height: auto;
-}
-.asideBar {
-  grid-area: "asideBar";
-  background-color: rgba(7, 7, 7, 0.377);
-  display: flex;
-  justify-content: center;
 }
 </style>
