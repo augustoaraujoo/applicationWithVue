@@ -2,7 +2,7 @@
   <div>person {{ $route.params.idPerson }}</div>
 </template>
 
-<script>
+<script >
 import axios from "axios";
 export default {
   data() {
@@ -21,5 +21,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 </style>

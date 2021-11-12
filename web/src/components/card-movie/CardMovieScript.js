@@ -13,10 +13,12 @@ export default {
         `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`
       )
       .then((response) => {
-        response.data;
-        this.filmesPopulares = response.data.results;
+        const data = response.data;
+        console.log(data);
+        this.filmesPopulares = data.results;
       });
+  
   },
-  methods:{
+  methods: {
   }
 };

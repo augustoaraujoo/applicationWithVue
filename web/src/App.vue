@@ -1,5 +1,4 @@
 <template>
-  <nav><h1>home</h1></nav>
   <router-view />
 </template>
 <script>
