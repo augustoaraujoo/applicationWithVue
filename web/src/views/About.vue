@@ -1,41 +1,17 @@
 <template>
-  <header class="container-all-navbar">
-    <header>
-      <nav class="nav-bar-container">
-        <div class="nav-bar">
-          <h1>{{ movies.original_title }}</h1>
-          <input type="text" />
-        </div>
-        <aside class="aside">
-          <div>
-            <a href="#">watch</a>
-          </div>
-        </aside>
-      </nav>
+  <!-- <h1>{{ movies.original_title }}</h1> -->
+  <header class="parent">
+    <div class="div1">a</div>
+    <div class="div2">b</div>
+    <div>c</div>
+    <div class="div4">d</div>
 
-      <!-- <div class="castOfTheMovie" v-for="cast in casts" :key="cast.id">
-      <h1>This is an about {{ $route.params.id }}</h1>
-      <h2>{{ cast.character }} || {{ cast.name }}</h2>
-      <img
-        :src="`https://image.tmdb.org/t/p/original/${cast.profile_path}`"
-        width="100"
-        height="100"
-        :alt="cast.name"
-      />
-      <router-link :to="{ name: 'Person', params: { idPerson: cast.id } }">
-        see actor
-      </router-link>
-    </div> -->
-    </header>
+    <div class="div1">a</div>
+    <div class="div4">d</div>
+    <div class="back"></div>
+    <div class="div4">d</div>
   </header>
-  <main class="container-main">
-    <div class="container-background">
-      <img
-        :src="`https://image.tmdb.org/t/p/original/${movies.backdrop_path}`"
-        class="image-movie-background"
-      />
-    </div>
-  </main>
+  <main></main>
 </template>
 
 <script>
@@ -65,8 +41,12 @@ export default {
       )
       .then((response) => {
         const data = response.data;
-        this.movies = data;
         console.log(data);
+        this.movies = data;
+
+        const parent = document.querySelector(".parent");
+        parent.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${this.movies.backdrop_path})`;
+        return;
       });
     return getDetailsMovies;
   },
@@ -75,45 +55,41 @@ export default {
 </script>
 
 <style>
-.nav-bar-container {
-  display: flex;
-  align-items: center;
-  height: 13vh;
-  background: red;
+* {
+  box-sizing: border-box;
 }
-.nav-bar {
-  width: 70%;
-  height: 5vh;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-  background: chartreuse;
-  margin-right: 10;
-  padding: 5px;
-}
-.aside {
-  background: rgb(48, 53, 42);
-  padding: 5px;
-  width: 40%;
-  height: 5vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.parent {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  grid-template-rows: 10vh 10vh;
+  gap: 2px;
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.image-movie-background {
- background-size: cover ;
- width:100%;
- height: 100%;
+.div1 {
+  background: rgba(255, 0, 0, 0.158);
 }
-#containerBackgroundImage {
-  -webkit-animation: containerBackgroundImage 0.5s
+
+.div2 {
+  background: rgba(0, 0, 0, 0.699);
+}
+
+.div3 {
+  background: rgba(221, 8, 8, 0.911);
+}
+
+.div4 {
+  background: rgba(223, 190, 190, 0.295);
+}
+.container-background {
+  -webkit-animation: container-background 0.5s
     cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: containerBackgroundImage 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
+  animation: container-background 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
-@-webkit-keyframes containerBackgroundImage {
+@-webkit-keyframes container-background {
   0% {
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
@@ -129,7 +105,7 @@ export default {
     opacity: 1;
   }
 }
-@keyframes containerBackgroundImage {
+@keyframes container-background {
   0% {
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
