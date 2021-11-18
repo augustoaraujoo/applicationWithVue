@@ -1,63 +1,29 @@
 <template>
-  <!-- <h1>{{ movies.original_title }}</h1> -->
   <header class="parent">
-    <div class="div1">a</div>
-    <div class="div2">b</div>
+    <div class="container-navbar">
+      <nav class="navbar">
+        <h2>{{ movies.original_title }}</h2>
+        <a href="#">👩‍👩‍👧‍👦</a>
+      </nav>
+    </div>
+    <aside class="aside-container">
+      <div class="aside-buttom">
+        <button>WATCH</button>
+      </div>
+    </aside>
     <div>c</div>
-    <div class="div4">d</div>
-
+    
+    <div class="aside">d</div>
     <div class="div1">a</div>
-    <div class="div4">d</div>
-    <div class="back"></div>
-    <div class="div4">d</div>
+    <div class="aside">d</div>
+    <Footer />
+    <div class="aside"></div>
   </header>
-  <main></main>
 </template>
 
-<script>
-import axios from "axios";
-export default {
-  data() {
-    return {
-      casts: "",
-      movies: [],
-    };
-  },
-  async mounted() {
-    const { id } = this.$route.params;
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=e3c3595204a142ec627688c9ea2ad00f&language=en-US`
-    );
-    const data = response.data;
-    this.casts = data.cast;
-  },
-  async created() {
-    const { id } = this.$route.params;
-    const api_key = "e3c3595204a142ec627688c9ea2ad00f";
-
-    const getDetailsMovies = await axios
-      .get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US`
-      )
-      .then((response) => {
-        const data = response.data;
-        console.log(data);
-        this.movies = data;
-
-        const parent = document.querySelector(".parent");
-        parent.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${this.movies.backdrop_path})`;
-        return;
-      });
-    return getDetailsMovies;
-  },
-  methods: {},
-};
-</script>
+<script src='@/scripts/about/aboutScript'></script>
 
 <style>
-* {
-  box-sizing: border-box;
-}
 .parent {
   height: 100vh;
   display: grid;
@@ -67,6 +33,19 @@ export default {
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+.container-navbar {
+  display: flex;
+  justify-content: center;
+}
+.navbar {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
 }
 
 .div1 {
@@ -74,7 +53,7 @@ export default {
 }
 
 .div2 {
-  background: rgba(0, 0, 0, 0.699);
+  background: rgba(87, 75, 75, 0.699);
 }
 
 .div3 {
@@ -84,41 +63,33 @@ export default {
 .div4 {
   background: rgba(223, 190, 190, 0.295);
 }
-.container-background {
-  -webkit-animation: container-background 0.5s
-    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: container-background 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+.aside-container {
+  background: gray;
+  display: flex;
+  align-items: center;
 }
-@-webkit-keyframes container-background {
-  0% {
-    -webkit-transform: scaleY(0);
-    transform: scaleY(0);
-    -webkit-transform-origin: 100% 0%;
-    transform-origin: 100% 0%;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scaleY(1);
-    transform: scaleY(1);
-    -webkit-transform-origin: 100% 0%;
-    transform-origin: 100% 0%;
-    opacity: 1;
-  }
+.aside-buttom {
+  width: 350px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+  padding: 10px;
 }
-@keyframes container-background {
-  0% {
-    -webkit-transform: scaleY(0);
-    transform: scaleY(0);
-    -webkit-transform-origin: 100% 0%;
-    transform-origin: 100% 0%;
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scaleY(1);
-    transform: scaleY(1);
-    -webkit-transform-origin: 100% 0%;
-    transform-origin: 100% 0%;
-    opacity: 1;
-  }
+button {
+  border: 1px solid #ffff;
+  width: 130px;
+  height: 40px;
+  background: rgb(2, 2, 2);
+  color: #ffff;
+  font-family: "Poppins", sans-serif, "Roboto";
+  font-weight: 500;
+}
+button:hover {
+  cursor: pointer;
+}
+.aside {
+  background: rgba(220, 220, 220, 0.377);
+  position: relative;
+  z-index: 1;
 }
 </style>
