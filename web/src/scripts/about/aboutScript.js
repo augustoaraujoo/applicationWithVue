@@ -1,5 +1,7 @@
 import axios from "axios";
 import Footer from '../../components/footer/Footer.vue'
+import ButtonWatch from '../../components/button-watch/ButtonWatch.vue'
+import TeaserContainer from '../../components/teaser-component/TeaserContainer.vue'
 export default {
   data() {
     return {
@@ -8,7 +10,9 @@ export default {
     };
   },
   components: {
-    Footer
+    Footer,
+    ButtonWatch,
+    TeaserContainer
   },
   async mounted() {
     const { id } = this.$route.params;
