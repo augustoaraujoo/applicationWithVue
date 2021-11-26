@@ -48,4 +48,8 @@ export default {};
   display: flex;
   justify-content: space-around;
 }
+.social-mídias a {
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
 </style>

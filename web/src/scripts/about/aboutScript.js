@@ -3,10 +3,13 @@ import Footer from '../../components/footer/Footer.vue'
 import ButtonWatch from '../../components/button-watch/ButtonWatch.vue'
 import TeaserContainer from '../../components/teaser-component/TeaserContainer.vue'
 export default {
+  props: {
+  },
   data() {
     return {
       casts: "",
       movies: [],
+      api_key : "e3c3595204a142ec627688c9ea2ad00f"
     };
   },
   components: {
@@ -24,11 +27,10 @@ export default {
   },
   async created() {
     const { id } = this.$route.params;
-    const api_key = "e3c3595204a142ec627688c9ea2ad00f";
 
     const getDetailsMovies = await axios
       .get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${this.api_key}&language=en-US`
       )
       .then((response) => {
         const data = response.data;

@@ -13,9 +13,9 @@
       />
       <li class="liCardMovie" type="none">
         <div class="containerInfos">
+          <i class="popularityMovie">{{ filmePopular.vote_average }}</i>
           <h1 class="titleMovie">{{ filmePopular.title }}</h1>
           <!-- {{ filmePopular.adult }} -->
-          <i class="popularityMovie">{{ filmePopular.vote_average }}</i>
           <!-- {{ filmePopular.original_title }} -->
           <!-- {{ filmePopular.overview }} -->
         </div>
@@ -33,7 +33,19 @@
   display: inline;
 }
 .popularityMovie {
-  color: #f5f5f5ea;
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  flex: 1;
+  border-radius:10px;
+  position: relative;
+  top: -35px;
+  z-index: 1;
+  background: rgba(32, 32, 28, 0.61);
+  color:#ffff;
 }
 .filmesPopulares {
   grid-area: "filmesPopulares";
@@ -58,28 +70,22 @@
   background: rgba(112, 94, 94, 0.349);
 }
 .liCardMovie {
-  background: rgb(102, 79, 79);
-  display:block;
+  display: block;
   padding: 1px;
-  margin-top:5px;
 }
 .containerInfos {
   margin: 0 auto;
-  width: 190px;
+  width: 200px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  background: yellow;
-}
-.popularityMovie {
-  background: rgba(255, 0, 0, 0.329);
 }
 .titleMovie {
-  background: yellowgreen;
   font-size: 15px;
-  display: block;
-  text-align: left;
+  display: inline;
+  text-align: center;
   font-weight: 700;
-  margin: 2px;
   color: rgb(255, 255, 255);
 }
 #imageFilme {

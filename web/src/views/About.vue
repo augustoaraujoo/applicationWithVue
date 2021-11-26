@@ -18,7 +18,7 @@
         <h2>{{ movies.original_title }}</h2>
         <i>OFFICIAL TEASER</i>
       </div>
-       <TeaserContainer :title='movies.original_title'/>
+        <TeaserContainer :title="movies.original_title" /> 
     </div>
   </header>
 </template>
@@ -34,7 +34,6 @@
   display: grid;
   grid-template-columns: 4fr 2fr;
   grid-template-rows: 10vh 10vh;
-  gap: 1px;
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
@@ -55,7 +54,6 @@
 
 .div1 {
   background: #808080;
-  opacity: 0.7;
 }
 
 .aside-container {
