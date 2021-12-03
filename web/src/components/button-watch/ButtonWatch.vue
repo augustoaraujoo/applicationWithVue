@@ -26,7 +26,6 @@ button:hover {
   width: 350px;
   display: flex;
   justify-content: flex-end;
-  margin: 10px;
   padding: 10px;
 }
 </style>

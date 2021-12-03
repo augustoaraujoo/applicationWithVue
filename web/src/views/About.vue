@@ -3,22 +3,32 @@
     <div class="container-navbar">
       <nav class="navbar">
         <h2 id="movie-title">{{ movies.original_title }}</h2>
-        <a href="#">👩‍👩‍👧‍👦</a>
+        <img
+          src="https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-menu-512.png"
+          alt="icon menu"
+          width="35"
+          height="35"
+        />
       </nav>
     </div>
     <aside class="aside-container">
       <ButtonWatch />
     </aside>
-    <div>a</div>
+    <div><!----></div>
 
-    <div class="div1"><h4>TRAILERS</h4></div>
+    <div class="div1">
+      <div class="trailer-text-container">
+        <h4>TRAILERS</h4>
+        <span>🔴🔴🔴</span>
+      </div>
+    </div>
     <Footer />
     <div class="div1">
-      <div>
+      <div class="text-information">
         <h2>{{ movies.original_title }}</h2>
-        <i>OFFICIAL TEASER</i>
+        <h3>OFFICIAL TEASER</h3>
       </div>
-        <TeaserContainer :title="movies.original_title" /> 
+      <TeaserContainer :title="movies.original_title" />
     </div>
   </header>
 </template>
@@ -51,19 +61,45 @@
   margin: 10px;
   padding: 10px;
 }
-
-.div1 {
-  background: #808080;
+.navbar img:hover {
+  cursor: pointer;
 }
-
+.div1 {
+  background-color: rgba(27, 25, 25, 0.685);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
 .aside-container {
-  background: #808080;
-  opacity: 0.7;
   display: flex;
   align-items: center;
+  background-color: rgba(27, 25, 25, 0.685);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.text-information {
+  width: 229px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+.text-information h2,
+h3 {
+  color: #ffff;
+  font-weight: 500;
+}
+.trailer-text-container h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+.trailer-text-container {
+  margin-top: 15px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .aside {
-  background: rgba(220, 220, 220, 0.377);
   position: relative;
   z-index: 1;
 }

@@ -1,6 +1,8 @@
 <template>
   <div>
-    <button style=" backgroundColor: {{color}} ">{{ text }}</button>
+    <button :style="{ backgroundColor: colorBtn, color: colorText }">
+      {{ text }}
+    </button>
   </div>
 </template>
 
@@ -8,7 +10,8 @@
 export default {
   props: {
     text: String,
-    color: String,
+    colorBtn: String,
+    colorText: String,
   },
   computed: {},
   data() {},
@@ -20,7 +23,7 @@ button {
   width: 230px;
   height: 40px;
   margin: 3px;
-  background: rgb(2, 2, 2);
+  background: #020202;
   color: #ffff;
   font-family: "Poppins", sans-serif, "Roboto";
   font-weight: 500;
