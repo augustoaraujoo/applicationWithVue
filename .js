@@ -1,8 +1,8 @@
-function tabuada(n) {
-    for (let i = 0; i <=n; i++) {
-        const number = 5
-        const c = i*number
-        console.log(`${number}x${i} = ${c}`);
+function func(n) {
+    for (let i = 0; i <= n; i++) {
+        const num = 5
+        const calc = i * num
+        console.log(`${i}x${num}=${calc}`);
     }
 }
-tabuada(5)
+func(10)
