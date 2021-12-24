@@ -2,6 +2,7 @@ import axios from "axios";
 import Footer from '../../components/footer/Footer.vue'
 import ButtonWatch from '../../components/button-watch/ButtonWatch.vue'
 import TeaserContainer from '../../components/teaser-component/TeaserContainer.vue'
+import Aside from '../../components/aside/AsideAbout.vue'
 export default {
   props: {
   },
@@ -15,7 +16,8 @@ export default {
   components: {
     Footer,
     ButtonWatch,
-    TeaserContainer
+    TeaserContainer,
+    Aside
   },
   async mounted() {
     const { id } = this.$route.params;
@@ -34,7 +36,6 @@ export default {
       )
       .then((response) => {
         const data = response.data;
-        console.log(data);
         this.movies = data;
 
         const parent = document.querySelector(".parent");

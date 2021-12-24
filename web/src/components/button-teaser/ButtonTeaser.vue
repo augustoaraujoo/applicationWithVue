@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
 export default {
   props: {
     text: String,
@@ -14,13 +15,19 @@ export default {
     colorText: String,
   },
   computed: {},
-  data() {},
+  data() {
+    return {
+    }
+  },
+
+  mounted() {
+  },
 };
 </script>
 <style scoped>
 button {
   border: 1px solid #ffff;
-  width: 230px;
+  width: 300px;
   height: 40px;
   margin: 3px;
   background: #020202;

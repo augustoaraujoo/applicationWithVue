@@ -1,18 +1,18 @@
 <template>
   <main>
-    <Aside />
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste blanditiis tempore perspiciatis temporibus est voluptatem possimus quaerat sequi explicabo, non aliquid qui eum similique laudantium eaque! Fuga modi obcaecati nesciunt.
+    </div>
     <CardMovie />
   </main>
 </template>
 
 <script>
-import Aside from "../components/aside/Aside.vue";
 import CardMovie from "../components/card-movie/CardMovie.vue";
 export default {
   name: "Home",
   components: {
     CardMovie,
-    Aside,
   },
 };
 </script>

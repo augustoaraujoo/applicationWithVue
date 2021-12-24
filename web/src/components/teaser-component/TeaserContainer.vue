@@ -1,10 +1,15 @@
 <template>
   <div class="teaser-movie-container">
     <div class="card-teaser">
-      <div>
-        <i :v-model="title">{{ title }}</i>
+      <div class="video-movie">
+        <iframe
+          src="https://www.youtube.com/embed/wPosLpgMtTY"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
-      <div class="video-movie"></div>
     </div>
     <div class="buttons-teaser-container">
       <ButtonTeaser text="WATCH" colorBtn="#ffff" colorText="#020202" />
@@ -14,6 +19,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import ButtonTeaser from "../../components/button-teaser/ButtonTeaser";
 export default {
   props: {
@@ -22,7 +28,22 @@ export default {
   components: {
     ButtonTeaser,
   },
-  data() {},
+  data() {
+    return {
+      api_key: "e3c3595204a142ec627688c9ea2ad00f",
+    };
+  },
+  mounted() {
+    const { id } = this.$route.params;
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.api_key}&language=en-US`
+      )
+      .then((response) => {
+        const data = response.data;
+        console.log(data.results.name);
+      });
+  },
 };
 </script>
 
@@ -37,9 +58,9 @@ export default {
 }
 .card-teaser {
   margin-top: 2px;
-  width: 50%;
-  height: 40vh;
-  background: wheat;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 5px;
 }
 .buttons-teaser-container {
   display: flex;
@@ -47,5 +68,9 @@ export default {
   align-content: center;
   align-items: center;
   justify-content: center;
+}
+.video-movie iframe {
+  width: auto;
+  height: 250px;
 }
 </style>

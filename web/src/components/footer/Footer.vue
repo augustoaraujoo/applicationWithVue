@@ -1,12 +1,15 @@
 <template>
   <footer class="container-footer">
-    <div class="items">
+
+    <div class="items-footer">
+
       <div class="first-item-scrool">
         <div class="item-scrool">
           <strong>Scrool</strong>
           <a href="#"> down</a>
         </div>
       </div>
+      
       <div class="second-item-container">
         <div class="social-mídias">
           <a href="#">FACEBOOK</a>
@@ -19,37 +22,32 @@
   </footer>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style>
 .container-footer {
-  display: flex;
-  flex: 1;
-  align-items: flex-end;
-}
-.items {
-  display: flex;
-  align-items: center;
   width: 100%;
-  justify-content: space-between;
-  margin: 10px;
-  padding: 10px;
 }
-.second-item-container {
-  width: 45%;
+.items-footer {
+  display: flex;
+  margin: 10px;
+}
+.first-item-scrool {
+  margin-left: 10px;
+  width: 300px;
+}
+.item-scrool {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+}
+
+.second-item-container {
+  flex: 1;
 }
 .social-mídias {
-  flex: 1;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .social-mídias a {
-  font-weight: 600;
-  color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 </style>
