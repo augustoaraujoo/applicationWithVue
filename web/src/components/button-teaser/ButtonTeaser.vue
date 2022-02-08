@@ -1,9 +1,7 @@
 <template>
-  <div>
     <button :style="{ backgroundColor: colorBtn, color: colorText }">
       {{ text }}
     </button>
-  </div>
 </template>
 
 <script>
@@ -29,7 +27,7 @@ button {
   border: 1px solid #ffff;
   width: 300px;
   height: 40px;
-  margin: 3px;
+  margin: 4px;
   background: #020202;
   color: #ffff;
   font-family: "Poppins", sans-serif, "Roboto";

@@ -1,7 +1,5 @@
 <template>
-  <div class="aside-buttom">
     <button>WATCH</button>
-  </div>
 </template>
 
 <script>
@@ -13,6 +11,7 @@ export default {
 button {
   border: 1px solid #ffff;
   width: 130px;
+  margin-bottom: 4px;
   height: 40px;
   background: rgb(2, 2, 2);
   color: #ffff;
@@ -22,10 +21,5 @@ button {
 button:hover {
   cursor: pointer;
 }
-.aside-buttom {
-  width: 350px;
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px;
-}
+
 </style>

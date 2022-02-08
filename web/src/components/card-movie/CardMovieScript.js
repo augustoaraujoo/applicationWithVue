@@ -1,10 +1,13 @@
 import axios from "axios";
 export default {
   name: "Home",
+  props: {
+    api_key: String
+  },
   data() {
     return {
       filmesPopulares: [],
-      api_key : "e3c3595204a142ec627688c9ea2ad00f"
+      
     };
   },
   async mounted() {
@@ -19,5 +22,6 @@ export default {
 
   },
   methods: {
+
   }
 };

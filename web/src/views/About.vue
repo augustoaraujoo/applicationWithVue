@@ -1,66 +1,53 @@
 <template>
-  <div class="template">
-    <div class="container">
-      <div class="grid div-container">
-        <header class="header-container">
-          <div class="header-infos">
-            <h2 id="movie-title">{{ movies.original_title }}</h2>
-            <img
-              src="https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-menu-512.png"
-              alt="icon menu"
-              width="35"
-              height="35"
-            />
-          </div>
-        </header>
+  <div class="container">
+    <div class="grid div-container">
+      <header class="header-container">
+        <div class="header-infos">
+          <h2 id="movie-title">{{ movies.original_title }}</h2>
+          <img
+            src="https://cdn0.iconfinder.com/data/icons/heroicons-ui/24/icon-menu-512.png"
+            alt="icon menu"
+            width="35"
+            height="35"
+          />
+        </div>
+      </header>
 
-        <nav class="nav-container">
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Architecto modi odio
-            </p>
-          </div>
-        </nav>
-      </div>
+      <NavInformationAbout />
     </div>
-    <main class="grid main-container">
-      <div class="parent background-image"></div>
-      <Aside/>
-    </main>
-
-    <footer class="grid container-footer">
-      <Footer/>
-    </footer>
   </div>
+  <main class="grid main-container">
+    <div class="parent background-image"></div>
+    <Aside />
+  </main>
+
+  <footer class="grid container-footer">
+    <Footer />
+  </footer>
+  
 </template>
 
 <script src='../scripts/about/aboutScript'>
 </script>
 
-<style>
-
-.template {
-  width: 100%;
-  height: 100%;
-}
+<style scoped>
 .grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 400px;
 }
 .container {
-  height: 60px;
+  height: 4.5rem;
 }
 .header-container {
 }
 .header-infos {
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 10px;
 }
-.nav-container {
-}
+
 .main-container {
   height: 80vh;
 }

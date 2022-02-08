@@ -1,18 +1,18 @@
 <template>
   <main>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste blanditiis tempore perspiciatis temporibus est voluptatem possimus quaerat sequi explicabo, non aliquid qui eum similique laudantium eaque! Fuga modi obcaecati nesciunt.
-    </div>
-    <CardMovie />
+    <AsideMenu />
+    <CardMovie api_key="e3c3595204a142ec627688c9ea2ad00f"/>
   </main>
 </template>
 
 <script>
+import AsideMenu from "../components/aside-menu/AsideMenu.vue";
 import CardMovie from "../components/card-movie/CardMovie.vue";
 export default {
   name: "Home",
   components: {
     CardMovie,
+    AsideMenu,
   },
 };
 </script>
@@ -22,8 +22,7 @@ main {
   display: grid;
   grid-template-areas: "asideBar  filmesPopulares";
   grid-template-columns: 370px 1fr;
-  grid-template-rows: 1fr;
   gap: 1px;
-  height: auto;
+  background: rgb(243, 241, 241);
 }
 </style>

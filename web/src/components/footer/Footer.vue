@@ -24,7 +24,8 @@
 
 <style>
 .container-footer {
-  width: 100%;
+  display: flex;
+  align-items: center;
 }
 .items-footer {
   display: flex;
@@ -43,6 +44,8 @@
   flex: 1;
 }
 .social-mídias {
+  margin-left: 11.1rem;
+  width: 500px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
