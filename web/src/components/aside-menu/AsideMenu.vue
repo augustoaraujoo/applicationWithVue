@@ -1,25 +1,27 @@
 <template>
   <aside>
-    <ButtonAsideMenu />
-    <ButtonAsideMenu />
-    <ButtonAsideMenu />
-    <ButtonAsideMenu />
-    <ButtonAsideMenu />
-    <ButtonAsideMenu />
+    <ul v-for="genre in genres" :key="genre.id">
+      <li>
+        <ButtonAsideMenu 
+          :movieTypeID="genre.id" 
+          :movieName="genre.name" 
+          />
+      </li>
+    </ul>
   </aside>
 </template>
 
-<script>
-import ButtonAsideMenu from "../buttons-aside-menu/ButtonAsideMenu.vue";
-export default {
-  components: { ButtonAsideMenu },
-};
-</script>
 
 <style scoped>
 aside {
-  position:relative ;
+  position: relative;
   margin: 10px;
   padding: 5px;
 }
+
+li {
+  list-style-type: none;
+}
 </style>
+
+<script src='./asideMenu.js'></script>

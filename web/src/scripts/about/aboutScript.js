@@ -26,6 +26,7 @@ export default {
       `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${this.api_key}&language=en-US`
     );
     const data = response.data;
+    console.log(data);
     this.casts = data.cast;
   },
   async created() {

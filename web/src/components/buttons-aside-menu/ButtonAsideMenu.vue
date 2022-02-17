@@ -1,11 +1,17 @@
 <template>
   <div class="container-button">
-    <button type="button">show me</button>
+    <button type="button">{{ movieName }}</button>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    movieTypeID: Number,
+    movieName: String
+  },
+  
+};
 </script>
 
 <style scoped>

@@ -17,6 +17,7 @@ export default {
       )
       .then((response) => {
         const data = response.data;
+        console.log(data);
         this.filmesPopulares = data.results;
       });
 

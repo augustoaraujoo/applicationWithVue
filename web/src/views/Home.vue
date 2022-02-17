@@ -1,7 +1,10 @@
 <template>
   <main>
     <AsideMenu />
-    <CardMovie api_key="e3c3595204a142ec627688c9ea2ad00f"/>
+    
+    <CardMovie 
+      api_key="e3c3595204a142ec627688c9ea2ad00f"
+    />
   </main>
 </template>
 
@@ -16,7 +19,9 @@ export default {
   },
 };
 </script>
+<script>
 
+</script>
 <style scoped>
 main {
   display: grid;
