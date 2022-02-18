@@ -2,15 +2,15 @@
   <aside>
     <ul v-for="genre in genres" :key="genre.id">
       <li>
-        <ButtonAsideMenu 
-          :movieTypeID="genre.id" 
-          :movieName="genre.name" 
-          />
+        <ButtonAsideMenu
+          :movieTypeID="genre.id"
+          :movieName="genre.name"
+          @event-filho-button="receberDadosDoFilhoButton"
+        />
       </li>
     </ul>
   </aside>
 </template>
-
 
 <style scoped>
 aside {

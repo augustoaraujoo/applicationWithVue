@@ -1,13 +1,10 @@
 <template>
   <main>
     <AsideMenu />
-    
-    <CardMovie 
-      api_key="e3c3595204a142ec627688c9ea2ad00f"
-    />
+    <CardMovie api_key="e3c3595204a142ec627688c9ea2ad00f" typeMovieCategory="string" />
   </main>
 </template>
-
+<!--typeMovieCategory-->
 <script>
 import AsideMenu from "../components/aside-menu/AsideMenu.vue";
 import CardMovie from "../components/card-movie/CardMovie.vue";
@@ -19,6 +16,7 @@ export default {
   },
 };
 </script>
+
 <script>
 
 </script>

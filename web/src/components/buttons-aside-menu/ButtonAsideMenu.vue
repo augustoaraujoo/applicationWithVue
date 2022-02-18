@@ -1,6 +1,6 @@
 <template>
   <div class="container-button">
-    <button type="button">{{ movieName }}</button>
+    <button type="button" @click="dadosFilhoButton">{{ movieName }}</button>
   </div>
 </template>
 
@@ -8,9 +8,19 @@
 export default {
   props: {
     movieTypeID: Number,
-    movieName: String
+    movieName: String,
   },
-  
+  data() {
+    return {
+      myPropsMovieName: this.$props.movieName,
+    }
+  },
+  methods: {
+    dadosFilhoButton() {
+      this.$emit('event-filho-button', this.myPropsMovieName)
+      console.log(this.movieTypeID);
+    }
+  }
 };
 </script>
 

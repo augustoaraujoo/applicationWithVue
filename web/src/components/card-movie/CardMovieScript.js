@@ -2,7 +2,8 @@ import axios from "axios";
 export default {
   name: "Home",
   props: {
-    api_key: String
+    api_key: String,
+    typeMovieCategory:String
   },
   data() {
     return {
