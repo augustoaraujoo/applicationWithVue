@@ -1,6 +1,6 @@
 <template>
   <div class="container-button">
-    <button type="button" @click="dadosFilhoButton">{{ movieName }}</button>
+    <!-- <button type="button" @click="dadosFilhoButton">{{ movieName }}</button> -->
   </div>
 </template>
 
@@ -18,8 +18,7 @@ export default {
   methods: {
     dadosFilhoButton() {
       this.$emit('event-filho-button', this.myPropsMovieName)
-      console.log(this.movieTypeID);
-    }
+    }      
   }
 };
 </script>

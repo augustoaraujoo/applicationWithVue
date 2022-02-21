@@ -1,7 +1,7 @@
 <template>
   <main>
     <AsideMenu />
-    <CardMovie api_key="e3c3595204a142ec627688c9ea2ad00f" typeMovieCategory="string" />
+    <CardMovie api_key="e3c3595204a142ec627688c9ea2ad00f"/>
   </main>
 </template>
 <!--typeMovieCategory-->
@@ -14,12 +14,12 @@ export default {
     CardMovie,
     AsideMenu,
   },
+  data(){
+    }
 };
-</script>
-
-<script>
 
 </script>
+
 <style scoped>
 main {
   display: grid;
